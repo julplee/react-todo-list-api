@@ -1,0 +1,26 @@
+{
+  "name": "react-todo-list-api",
+  "version": "1.0.0",
+  "description": "API for React Todo list project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julplee/react-todo-list-api.git"
+  },
+  "author": "Julien PLEE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/julplee/react-todo-list-api/issues"
+  },
+  "homepage": "https://github.com/julplee/react-todo-list-api#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.8"
+  }
+}
