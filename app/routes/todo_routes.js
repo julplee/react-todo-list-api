@@ -9,18 +9,19 @@ module.exports = function (app, db) {
     });
 
     app.post('/todos', (req, res) => {
+        let data = db.readTodos();
+
         const todo = {
+            id: db.giveId(),
             title: req.body.title,
             description: req.body.description
         };
 
-        let data = db.readTodos();
-
-        todo.id = data.length + 1;
-
         data.push(todo);
 
         db.writeTodos(data);
+
+        db.commitId();
         res.send('Todo created');
     });
 

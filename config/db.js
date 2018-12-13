@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const dataFileUrl = './config/data.json';
+const indexFileUrl = './config/index.json';
 
 module.exports = {
     readTodos() {
@@ -11,8 +12,22 @@ module.exports = {
         return todos;
     },
 
+    giveId() {
+        let id = parseInt(fs.readFileSync(indexFileUrl));
+
+        return id;
+    },
+
+    commitId() {
+        let id = this.giveId();
+
+        id += 1;
+        fs.writeFileSync(indexFileUrl, id);
+    },
+
     writeTodos(data) {
         let rawData = JSON.stringify(data);
+
         fs.writeFileSync(dataFileUrl, rawData);
     }
 }
